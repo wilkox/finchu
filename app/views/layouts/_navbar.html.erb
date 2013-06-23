@@ -2,9 +2,7 @@
   <div class="navbar-inner">
     <%= link_to 'Finchu', root_path, :class => "brand" %>
     <ul class="nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
+      <li class="<%= 'active' if params[:action] == 'about' %>"> <%= link_to 'About', about_path %></li>
       </ul>
     <%= render 'layouts/user_button' %>
   </div>
