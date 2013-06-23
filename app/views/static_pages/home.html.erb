@@ -1,3 +1,9 @@
 <h1>Finchu - The Home Page</h1>
 
 Read all <%= link_to 'about', about_path %> it.
+
+<% if user_signed_in? %>
+  You are signed in as <%= current_user %>.
+<% else %>
+  You are not signed in.
+<% end %>
