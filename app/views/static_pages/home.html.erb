@@ -3,7 +3,7 @@
 Read all <%= link_to 'about', about_path %> it.
 
 <% if user_signed_in? %>
-  You are signed in as <%= current_user %>.
+  You are signed in as <%= link_to current_user.email, update_account_path %>. <%= link_to 'Click here to sign out', sign_out_path %>.
 <% else %>
-  You are not signed in.
+  You are not signed in. <%= link_to 'Sign up', sign_up_path %> or <%= link_to 'sign in', sign_in_path %>.
 <% end %>

@@ -1,6 +1,11 @@
 Finchu::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users do
+    match "/sign_up", to: "devise/registrations#new"
+    match "/sign_in", to: "devise/sessions#new"
+    match "/sign_out", to: "devise/sessions#destroy"
+    match "/update_account", to: "devise/registrations#edit"
+  end
 
   root :to => 'static_pages#home'
 
