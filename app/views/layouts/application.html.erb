@@ -7,41 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-<div class="navbar">
-  <div class="navbar-inner">
-    <%= link_to 'Finchu', root_path, :class => "brand" %>
-    <ul class="nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
-      </ul>
-    <% if user_signed_in? %>
-      <div class="btn-group pull-right">
-        <%= link_to current_user.email, update_account_path, :class => 'btn btn-inverse' %>
-        <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><%= link_to 'Sign out', sign_out_path %></li>
-        </ul>
-      </div>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path, :class => 'btn btn-inverse pull-right' %>
+  <div class="container">
+    <%= render 'layouts/navbar' %>
+
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
     <% end %>
+
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+
   </div>
-</div>
-
-<% if notice %>
-  <p class="notice"><%= notice %></p>
-<% end %>
-
-<% if alert %>
-  <p class="alert"><%= alert %></p>
-<% end %>
-
-<%= yield %>
-
-</div>
 </body>
 </html>

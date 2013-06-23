@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <div class="btn-group pull-right">
+    <%= link_to current_user.email, update_account_path, :class => 'btn btn-inverse' %>
+    <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to 'Sign out', sign_out_path %></li>
+    </ul>
+  </div>
+<% else %>
+  <%= link_to 'Sign in', sign_in_path, :class => 'btn btn-inverse pull-right' %>
+<% end %>
