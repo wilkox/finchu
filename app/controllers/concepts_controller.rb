@@ -44,7 +44,7 @@ class ConceptsController < ApplicationController
 
     respond_to do |format|
       if @concept.save
-        format.html { redirect_to @concept, notice: 'Concept was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Concept was successfully created.' }
         format.json { render json: @concept, status: :created, location: @concept }
       else
         format.html { render action: "new" }
@@ -76,7 +76,7 @@ class ConceptsController < ApplicationController
     @concept.destroy
 
     respond_to do |format|
-      format.html { redirect_to concepts_url }
+      format.html { redirect_to root_path }
       format.json { head :no_content }
     end
   end
