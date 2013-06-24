@@ -1,3 +1,11 @@
 <h1>Finchu - The Home Page</h1>
 
-Controller is <%= params %>
+<%= link_to 'New concept', new_concept_path %>
+
+<h2>There are <%= Concept.count %> concepts.</h2>
+
+<ul>
+<% Concept.all.each do |concept| %>
+  <li><%= link_to concept.name, concepts_path, :id => concept.id %> [<%= link_to 'delete', concept, :method => :delete, :id => concept.id, :class => 'text-warning' %>]</li>
+<% end %>
+</ul>
