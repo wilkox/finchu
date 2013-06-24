@@ -11,11 +11,17 @@
     <%= render 'layouts/navbar' %>
 
     <% if notice %>
-      <p class="notice"><%= notice %></p>
+      <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= notice %>
+      </div>
     <% end %>
 
     <% if alert %>
-      <p class="alert"><%= alert %></p>
+      <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= alert %>
+      </div>
     <% end %>
 
     <%= yield %>
