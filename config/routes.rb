@@ -1,5 +1,7 @@
 Finchu::Application.routes.draw do
 
+  resources :concepts
+
   devise_for :users do
     match "/sign_up", to: "devise/registrations#new"
     match "/sign_in", to: "devise/sessions#new"
